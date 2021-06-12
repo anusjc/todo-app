@@ -39,23 +39,27 @@ function Todo(props) {
         onClose = {e => setOpen(false)}
         >
             <div className={classes.paper}>
-                <h1>I am the Modal</h1>
+                <h1>Editing...</h1>
                 <input placeholder={props.todo.todo} value={input} onChange={event => setInput(event.target.value)}/>
-                <Button onClick={updateTodo}>Update Todo</Button>
+                <Button onClick={updateTodo}>Save Changes</Button>
             </div>
 
 
         </Modal>
-        <List clasName="todo_list">
+            <List clasName="todo_list">
             <ListItem>
                 <ListItemAvatar>
 
                 </ListItemAvatar>
-                <ListItemText primary={props.todo.todo} secondary="Deadline" />
-            </ListItem>
-            <button onClick={e => setOpen(true)}>Edit</button>
+                <ListItemText primary={props.todo.todo} secondary=""  />&nbsp;
+                <button onClick={e => setOpen(true)}>Edit</button>&nbsp;
             <DeleteForeverIcon onClick={event => db.collection('todos').doc(props.todo.id).delete()} / >
+            </ListItem>
+            {/* <button onClick={e => setOpen(true)}>Edit</button>
+            <DeleteForeverIcon onClick={event => db.collection('todos').doc(props.todo.id).delete()} / > */}
         </List>
+        
+
         </>
     )
 }

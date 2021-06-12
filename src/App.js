@@ -30,10 +30,12 @@ const addTodo = (event) => {
 }
 
   return (
-    <div className="app">
+    <div className="App">
+      <header className="App-header">
+      <h1>Here are your Todo's For the Day</h1><br></br>
       <form>
 
-      <FormControl>
+      <FormControl className="form-control">
         <InputLabel >Write a Todo</InputLabel>
         <Input value={input} onChange={event => setInput(event.target.value)} />
       </FormControl>
@@ -44,13 +46,13 @@ const addTodo = (event) => {
       {/* <button type = "submit" onClick={addTodo}>Add todo</button> */}
 
       </form>
-      
-    <ul>
+      <br></br>
+    <ul className="ul-style">
       {todos.map(todo => (
         <Todo todo = {todo} />
       ))}
       </ul>  
-
+</header>
     </div>
   );
 }
